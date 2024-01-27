@@ -10,10 +10,10 @@ import TableRow  from '../../../components/TableRow'
 
 export default function Articles() {
 
-    const [articles, setArticles] = useState<NewDocumentType>([])
+    const [articles, setArticles] = useState<NewDocumentType[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    useEffect(() => onSnapshot(eBookCollection, (snapshot: QuerySnapshot<DocumentData>) => {
+    useEffect(() => onSnapshot(eBookCollection, (snapshot: QuerySnapshot<Document>) => {
         setIsLoading(true)
         try{
             setArticles(
